@@ -73,3 +73,6 @@ function claude {
 function chatgpt {
     Start-Process "C:\Program Files\BraveSoftware\Brave-Browser\Application\brave.exe" "https://chatgpt.com/?oai-dm=1"
 }
+function github {
+    Start-Process "C:\Program Files\BraveSoftware\Brave-Browser\Application\brave.exe" "https://github.com/omegaopinmthechat?tab=repositories"
+}
