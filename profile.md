@@ -1,0 +1,70 @@
+# notepad $PROFILE to open the file and edit the below as per the location and download method
+function whatsapp { start whatsapp: }
+function brave {
+    $proc = Get-Process brave -ErrorAction SilentlyContinue | Where-Object { $_.MainWindowHandle -ne 0 } | Select-Object -First 1
+
+    if ($proc) {
+        Add-Type @"
+using System;
+using System.Runtime.InteropServices;
+public class Win32 {
+    [DllImport("user32.dll")]
+    public static extern bool ShowWindowAsync(IntPtr hWnd, int nCmdShow);
+    [DllImport("user32.dll")]
+    public static extern bool SetForegroundWindow(IntPtr hWnd);
+}
+"@
+        [Win32]::ShowWindowAsync($proc.MainWindowHandle, 3)
+        [Win32]::SetForegroundWindow($proc.MainWindowHandle)
+    } else {
+        Start-Process "C:\Program Files\BraveSoftware\Brave-Browser\Application\brave.exe"
+    }
+}
+function chrome {
+    $proc = Get-Process chrome -ErrorAction SilentlyContinue | Where-Object { $_.MainWindowHandle -ne 0 } | Select-Object -First 1
+
+    if ($proc) {
+        Add-Type @"
+using System;
+using System.Runtime.InteropServices;
+public class Win32 {
+    [DllImport("user32.dll")]
+    public static extern bool ShowWindowAsync(IntPtr hWnd, int nCmdShow);
+    [DllImport("user32.dll")]
+    public static extern bool SetForegroundWindow(IntPtr hWnd);
+}
+"@
+        [Win32]::ShowWindowAsync($proc.MainWindowHandle, 3)
+        [Win32]::SetForegroundWindow($proc.MainWindowHandle)
+    } else {
+        Start-Process "C:\Program Files\Google\Chrome\Application\chrome.exe"
+    }
+}
+function cursor { & "C:\Users\Amar\AppData\Local\Programs\cursor\Cursor.exe" }
+function semester_4 { explorer "C:\Users\Amar\Desktop\semester_4" }
+function dockerui { & "C:\Program Files\Docker\Docker\Docker Desktop.exe" }
+function antigravity { Start-Process  "C:\Users\Amar\AppData\Local\Programs\Antigravity\Antigravity.exe" }
+function spotify {
+    Start-Process "spotify:"
+}
+function postman {
+    $proc = Get-Process Postman -ErrorAction SilentlyContinue | Where-Object { $_.MainWindowHandle -ne 0 } | Select-Object -First 1
+
+    if ($proc) {
+        Add-Type @"
+using System;
+using System.Runtime.InteropServices;
+public class Win32 {
+    [DllImport("user32.dll")]
+    public static extern bool ShowWindowAsync(IntPtr hWnd, int nCmdShow);
+    [DllImport("user32.dll")]
+    public static extern bool SetForegroundWindow(IntPtr hWnd);
+}
+"@
+        [Win32]::ShowWindowAsync($proc.MainWindowHandle, 3)
+        [Win32]::SetForegroundWindow($proc.MainWindowHandle)
+    } else {
+        Start-Process "C:\Users\Amar\AppData\Local\Postman\Postman.exe"
+    }
+}
+
