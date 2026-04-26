@@ -66,3 +66,10 @@ public class Win32 {
         Start-Process "C:\Users\Amar\AppData\Local\Postman\Postman.exe"
     }
 }
+function claude {
+    Start-Process "C:\Program Files\BraveSoftware\Brave-Browser\Application\brave.exe" "https://claude.ai/"
+}
+
+function chatgpt {
+    Start-Process "C:\Program Files\BraveSoftware\Brave-Browser\Application\brave.exe" "https://chatgpt.com/?oai-dm=1"
+}
