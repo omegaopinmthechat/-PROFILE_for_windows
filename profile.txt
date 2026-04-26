@@ -1,4 +1,3 @@
-# notepad $PROFILE to open the file and edit the below as per the location and download method
 function whatsapp { start whatsapp: }
 function brave {
     $proc = Get-Process brave -ErrorAction SilentlyContinue | Where-Object { $_.MainWindowHandle -ne 0 } | Select-Object -First 1
@@ -67,4 +66,3 @@ public class Win32 {
         Start-Process "C:\Users\Amar\AppData\Local\Postman\Postman.exe"
     }
 }
-
