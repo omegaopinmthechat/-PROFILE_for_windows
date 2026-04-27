@@ -76,4 +76,7 @@ function chatgpt {
 function github {
     Start-Process "C:\Program Files\BraveSoftware\Brave-Browser\Application\brave.exe" "https://github.com/omegaopinmthechat?tab=repositories"
 }
-function research { ii "C:\Users\Amar\Desktop\ResearchPaper" }
+function research {
+    Set-Location "C:\Users\Amar\Desktop\ResearchPaper"
+    ii .
+}
