@@ -80,3 +80,10 @@ function research {
     Set-Location "C:\Users\Amar\Desktop\ResearchPaper"
     ii .
 }
+
+function dsa {
+    Set-Location "C:\Python_DSA"
+    code .
+}
+
+Import-Module posh-git
