@@ -42,9 +42,6 @@ public class Win32 {
 function cursor { & "C:\Users\Amar\AppData\Local\Programs\cursor\Cursor.exe" }
 function semester_4 { explorer "C:\Users\Amar\Desktop\semester_4" }
 function dockerui { & "C:\Program Files\Docker\Docker\Docker Desktop.exe" }
-function antigravity {
-    & "C:\Users\Amar\AppData\Local\Programs\Antigravity\Antigravity.exe" $args *> $null
-}
 function spotify {
     Start-Process "spotify:"
 }
@@ -88,4 +85,10 @@ function dsa {
     code .
 }
 
+function antigravity {
+    $exe = "C:\Users\Amar\AppData\Local\Programs\Antigravity IDE\Antigravity IDE.exe"
+    $path = if ($args.Count -gt 0) { $args[0] } else { $PWD }
+
+    cmd.exe /c "start `"`" `"$exe`" `"$path`" >nul 2>&1"
+}
 Import-Module posh-git
