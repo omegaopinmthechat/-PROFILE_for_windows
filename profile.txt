@@ -42,7 +42,9 @@ public class Win32 {
 function cursor { & "C:\Users\Amar\AppData\Local\Programs\cursor\Cursor.exe" }
 function semester_4 { explorer "C:\Users\Amar\Desktop\semester_4" }
 function dockerui { & "C:\Program Files\Docker\Docker\Docker Desktop.exe" }
-function antigravity { Start-Process  "C:\Users\Amar\AppData\Local\Programs\Antigravity\Antigravity.exe" }
+function antigravity {
+    & "C:\Users\Amar\AppData\Local\Programs\Antigravity\Antigravity.exe" $args *> $null
+}
 function spotify {
     Start-Process "spotify:"
 }
